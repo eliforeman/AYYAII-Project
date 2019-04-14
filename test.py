@@ -51,30 +51,30 @@ teapot.tempos.add(qpm=60);
 
 mm.plot_sequence(teapot)
 mm.play_sequence(teapot,synth=mm.synthesize)
-mm.sequence_proto_to_midi_file(teapot, 'teapot.mid')
+# mm.sequence_proto_to_midi_file(teapot, 'teapot.mid')
 
 
 drums = music_pb2.NoteSequence()
 
-drums.notes.add(pitch=36, start_time=0, end_time=0.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=38, start_time=0, end_time=0.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=0, end_time=0.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=46, start_time=0, end_time=0.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=0.25, end_time=0.375, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=0.375, end_time=0.5, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=0.5, end_time=0.625, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=50, start_time=0.5, end_time=0.625, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=36, start_time=0.75, end_time=0.875, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=38, start_time=0.75, end_time=0.875, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=0.75, end_time=0.875, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=45, start_time=0.75, end_time=0.875, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=36, start_time=1, end_time=1.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=1, end_time=1.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=46, start_time=1, end_time=1.125, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=42, start_time=1.25, end_time=1.375, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=48, start_time=1.25, end_time=1.375, is_drum=True, instrument=10, velocity=80)
-drums.notes.add(pitch=50, start_time=1.25, end_time=1.375, is_drum=True, instrument=10, velocity=80)
-drums.total_time = 1.375
+drums.notes.add(pitch=36, start_time=0, end_time=0.125, velocity=80)
+drums.notes.add(pitch=38, start_time=0, end_time=0.125, velocity=80)
+drums.notes.add(pitch=42, start_time=0, end_time=0.125, velocity=80)
+drums.notes.add(pitch=46, start_time=0, end_time=0.125, velocity=80)
+drums.notes.add(pitch=42, start_time=0.25, end_time=0.375, velocity=80)
+drums.notes.add(pitch=42, start_time=0.375, end_time=0.5, velocity=80)
+drums.notes.add(pitch=42, start_time=0.5, end_time=0.625, velocity=80)
+drums.notes.add(pitch=50, start_time=0.5, end_time=0.625, velocity=80)
+drums.notes.add(pitch=36, start_time=0.75, end_time=0.875, velocity=80)
+drums.notes.add(pitch=38, start_time=0.75, end_time=0.875, velocity=80)
+drums.notes.add(pitch=42, start_time=0.75, end_time=0.875, velocity=80)
+drums.notes.add(pitch=45, start_time=0.75, end_time=0.875, velocity=80)
+drums.notes.add(pitch=36, start_time=1, end_time=1.125, velocity=80)
+drums.notes.add(pitch=42, start_time=1, end_time=1.125, velocity=80)
+drums.notes.add(pitch=46, start_time=1, end_time=1.125, velocity=80)
+drums.notes.add(pitch=42, start_time=1.25, end_time=1.375, velocity=80)
+drums.notes.add(pitch=48, start_time=1.25, end_time=1.375, velocity=80)
+drums.notes.add(pitch=50, start_time=1.25, end_time=8, velocity=80)
+drums.total_time = 8
 
 drums.tempos.add(qpm=60)
 
@@ -85,8 +85,4 @@ mm.plot_sequence(drums)
 mm.play_sequence(drums,synth=mm.fluidsynth)
 
 # This creates a file called `drums_sample_output.mid`, containing the drums solo we've been using.
-# mm.sequence_proto_to_midi_file(drums, 'drums.mid')
-
-# This is a colab utility method to download that file. In your Python script, you
-# would just write it to disk.
-# files.download('drums_sample_output.mid')
+mm.sequence_proto_to_midi_file(drums, 'drums.mid')

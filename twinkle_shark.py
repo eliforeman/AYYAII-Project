@@ -29,20 +29,23 @@ twinkle_twinkle.notes.add(pitch=62, start_time=6.0, end_time=6.5, velocity=80)
 twinkle_twinkle.notes.add(pitch=62, start_time=6.5, end_time=7.0, velocity=80)
 twinkle_twinkle.notes.add(pitch=60, start_time=7.0, end_time=8.0, velocity=80)
 twinkle_twinkle.total_time = 8
-twinkle_twinkle.tempos.add(qpm=60);
+twinkle_twinkle.tempos.add(qpm=60)
 
 babyshark = mm.midi_file_to_note_sequence('./mid/babyshark.mid')
 babyshark = mm.extract_subsequence(babyshark, 0, 8)
+
 babyshark.ticks_per_quarter = 0
+babyshark.time_signatures.pop()
+babyshark.key_signatures.pop()
+babyshark.tempos.pop()
+babyshark.tempos.add(qpm=60)
+
+
 for note in babyshark.notes:
       if note.pitch < 60:
             note.pitch = 60
       note.instrument = 0
       note.is_drum = False
-
-pitches = sorted(list(set([note.pitch for note in babyshark.notes])))
-print("BLAH")
-print(pitches)
 
 # This gives us a list of sequences.
 note_sequences = music_vae.interpolate(

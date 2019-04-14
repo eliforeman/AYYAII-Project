@@ -1,0 +1,21 @@
+
+
+
+music_vae_generate \
+--config=cat-mel_2bar_big \
+--checkpoint_file=./content/mel_2bar_big.ckpt \
+--mode=interpolate \
+--num_outputs=5 \
+--input_midi_1=./mid/babyshark.mid \
+--input_midi_2=./mid/twinkle_twinkle.mid \
+--output_dir=./generated
+
+
+music_vae_generate \
+--config=cat-mel_2bar_big \
+--checkpoint_file=./content/mel_2bar_big.ckpt \
+--mode=interpolate \
+--num_outputs=5 \
+--input_midi_1=./generated/cat-mel_2bar_big_input1-extractions_2019-04-14_031254-001-of-002.mid \
+--input_midi_2=./mid/twinkle_twinkle.mid \
+--output_dir=./generated
