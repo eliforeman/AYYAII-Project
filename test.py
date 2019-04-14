@@ -31,7 +31,7 @@ mm.plot_sequence(twinkle_twinkle)
 # This is a colab utility method that plays a NoteSequence.
 mm.play_sequence(twinkle_twinkle,synth=mm.fluidsynth)
 
-mm.sequence_proto_to_midi_file(twinkle_twinkle, 'twinkle_twinkle.mid')
+# mm.sequence_proto_to_midi_file(twinkle_twinkle, 'twinkle_twinkle.mid')
 
 
 # Here's another NoteSequence!
@@ -85,7 +85,7 @@ mm.plot_sequence(drums)
 mm.play_sequence(drums,synth=mm.fluidsynth)
 
 # This creates a file called `drums_sample_output.mid`, containing the drums solo we've been using.
-mm.sequence_proto_to_midi_file(drums, 'drums.mid')
+# mm.sequence_proto_to_midi_file(drums, 'drums.mid')
 
 # This is a colab utility method to download that file. In your Python script, you
 # would just write it to disk.

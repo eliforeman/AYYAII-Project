@@ -27,12 +27,12 @@ music_vae = TrainedModel(
 # How many sequences, including the start and end ones, to generate.
 num_steps = 8;
 
-from test import twinkle_twinkle, teapot
+from test import twinkle_twinkle, drums
 
 # This gives us a list of sequences.
 note_sequences = music_vae.interpolate(
       twinkle_twinkle,
-      teapot,
+      drums,
       num_steps=num_steps,
       length=32)
 
