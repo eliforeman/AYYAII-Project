@@ -1,4 +1,4 @@
-# AYYAII-Project
+# Project Lilac
 
 
 Created with [@Kevin Liu](https://github.com/kevinjqliu) for CS4100 (Artificial Intelligence)
